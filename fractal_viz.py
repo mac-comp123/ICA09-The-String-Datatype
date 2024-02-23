@@ -51,6 +51,14 @@ def draw_combination_of_lacks_and_islands_curve(tur, n, angle, step_size):
 
     draw_fractal(tur, l_system, angle, step_size)
 
+def draw_class_demo(tur, n, angle, step_size):
+    axiom = 'F+f'
+    rules = {'F': 'FF-f',
+             'f': 'fF'}
+    l_system = apply_l_system(axiom, rules, n)
+
+    draw_fractal(tur, l_system, angle, step_size)
+
 
 if __name__ == '__main__':
     scr = turtle.Screen()
@@ -60,11 +68,12 @@ if __name__ == '__main__':
     tur.up()
     tur.down()
 
-    draw_koch_curve(tur, 4, 60, 5)
+    # draw_koch_curve(tur, 4, 60, 5)
     # draw_hilbert_curve(tur, 4, 90, 5)
     # draw_quadratic_koch_islad(tur, 3, 90, 5)
     # draw_dragon_curve(tur, 3, 90, 5)
     # draw_combination_of_lacks_and_islands_curve(tur, 2, 90, 5)
+    draw_class_demo(tur, 10, 90, 5)
 
     tur.up()
     tur.forward(50)
